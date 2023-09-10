@@ -1,0 +1,10 @@
+---
+- name: User External File varible
+  hosts: dev
+  vars_files: ./extranal_data
+  tasks:
+    - name: UserAdd In file
+      lineinfile:
+         path: /home/admin/loop_users.txt
+         line: "{{ item }}"
+      loop: "{{ data }}"

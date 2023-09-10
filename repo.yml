@@ -1,0 +1,10 @@
+---
+- name: Config Repo in All Servers
+  hosts: all
+  tasks:
+    - name: Set AppStrem
+      ansible.builtin.yum_repository:
+         name: AppStream
+         baseurl:
+         gpgcheck: yes
+         enable: yes

@@ -1,0 +1,14 @@
+---
+- name: Create web Content
+  hosts: dev
+  tasks:
+    - name: Create A group
+      group:
+        name: devops
+    - name: Create a direcotry
+      ansible.builtin.file:
+        path: /devweb
+        state: direcotry
+        group: devops
+        mode: '2755'
+        

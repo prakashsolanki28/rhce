@@ -1,0 +1,7 @@
+---
+-  name: Use Facts In Yml File
+   hosts: all
+   tasks:
+      - name: Print Ipv4 Address From Facts
+        debug:
+           msg: Ipv4 Address is {{ansible_all_ipv4_addresses }}

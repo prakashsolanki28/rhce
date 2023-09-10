@@ -1,0 +1,19 @@
+---
+- name: use multiple value
+  hosts: dev
+  tasks:
+    - name: add a user
+      user:
+        name: "{{ item.name }}"
+        groups: "{{ item.group }}"
+        comment: "{{ item.comment }}"
+      loop:
+        - name: prakash
+          group: wheel
+          comment: prakash added and now a member of wheel group
+          add: false
+        - name: kailash
+          group: wheel
+          comment: kailash add in wheen group 
+          add: true
+      when: item.add == true

@@ -1,0 +1,6 @@
+---
+- name: Check condtion
+  hosts: dev
+  tasks:
+	- name: print msg
+	  

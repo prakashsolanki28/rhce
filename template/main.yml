@@ -1,0 +1,16 @@
+---
+- name: Use of Template module
+  hosts: dev
+  tasks:
+    - name: Create Template Dir
+      file:
+        state: directory
+        path: /home/admin/template
+#    - name: Using Copy Module
+#      copy:      
+#        src: ./jinja2.j2
+#        dest: /home/admin/template/from_copy.txt
+    - name: Using Template Module
+      template:
+        src: ./jinja2.j2
+        dest: /home/admin/template/from_template.txt

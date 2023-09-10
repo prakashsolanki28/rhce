@@ -1,0 +1,21 @@
+---
+- name: User Var Files
+  hosts: dev
+  vars:
+    data:
+      - Hello1
+      - Hello2
+      - Hello3
+      - Hello4
+      - Hello5
+  tasks:
+    - name: File Created
+      file:
+        path: /home/admin/loop_users.txt
+        state: touch
+    - name: User add
+      lineinfile:
+        path: /home/admin/loop_users.txt
+        line: "{{ item }}"
+      loop: "{{ data }}"
+
